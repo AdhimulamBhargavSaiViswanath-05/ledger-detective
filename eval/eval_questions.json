@@ -1,0 +1,42 @@
+[
+  {
+    "question": "How many purchase orders are there?",
+    "expected_answer_contains": ["10"]
+  },
+  {
+    "question": "What is the value of PO 4500123?",
+    "expected_answer_contains": ["250000"]
+  },
+  {
+    "question": "Which vendors have supplied materials?",
+    "expected_answer_contains": ["Anand", "Bharat", "Coastal", "Delhi", "Eastern", "Gujarat", "Hyderabad"]
+  },
+  {
+    "question": "What is the total invoice amount?",
+    "expected_answer_contains": ["1366700"]
+  },
+  {
+    "question": "Show me all receipts for PO 4500124",
+    "expected_answer_contains": ["4500124", "200"]
+  },
+  {
+    "question": "What's the weather today?",
+    "expected_answer_contains": ["purchase", "receipt"]
+  },
+  {
+    "question": "Show me the pending ones",
+    "expected_answer_contains": ["clarification", "pending"]
+  },
+  {
+    "question": "Which PO has the highest value?",
+    "expected_answer_contains": ["360000", "4500128"]
+  },
+  {
+    "question": "How many receipts are there?",
+    "expected_answer_contains": ["8"]
+  },
+  {
+    "question": "What is the total value of all purchase orders?",
+    "expected_answer_contains": ["1725700"]
+  }
+]
