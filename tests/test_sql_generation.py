@@ -8,7 +8,7 @@ from src.chains.sql_generation import generate_sql
 # Tests will run with either real LLM (if API key present) or mock LLM (fallback)
 
 
-WHITELISTED_TABLES = ['purchase_orders', 'receipts']
+WHITELISTED_TABLES = ['po_headers', 'po_items', 'goods_receipts', 'invoices', 'invoice_items']
 
 
 def is_valid_sql(sql: str) -> bool:
@@ -55,13 +55,13 @@ def is_select_query(sql: str) -> bool:
     return sql_upper.startswith('SELECT')
 
 
-# Test questions
+# Test questions - updated for new schema
 TEST_QUESTIONS = [
-    "What is the total value of PO 4500123?",
     "How many purchase orders are there?",
-    "Which vendors have supplied materials?",
-    "What is the total amount invoiced?",
-    "Show me all receipts for PO 4500124"
+    "Which vendors have the most purchase orders?",
+    "What is the total value of all invoices?",
+    "Show me all goods receipts for PO 4500001",
+    "Which purchase orders have no invoices yet?"
 ]
 
 
