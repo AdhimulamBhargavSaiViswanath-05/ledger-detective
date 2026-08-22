@@ -6,15 +6,28 @@ from typing import Tuple
 
 # Whitelist of allowed tables and their columns
 ALLOWED_TABLES = {
-    'purchase_orders': {
-        'po_number', 'po_line_item', 'vendor_id', 'vendor_name',
-        'material_description', 'order_qty', 'unit_price', 'currency',
-        'po_value', 'order_date', 'plant'
+    'po_headers': {
+        'po_number', 'vendor_id', 'vendor_name', 'po_date',
+        'plant', 'currency', 'payment_terms', 'po_status', 'created_by'
     },
-    'receipts': {
+    'po_items': {
+        'po_number', 'po_line_item', 'material_code', 'material_description',
+        'order_qty', 'unit_price', 'currency', 'po_value', 'uom',
+        'delivery_date', 'item_status'
+    },
+    'goods_receipts': {
         'gr_number', 'po_number', 'po_line_item', 'received_qty',
-        'receipt_date', 'invoice_number', 'invoice_amount',
-        'invoice_date', 'invoice_status'
+        'receipt_date', 'movement_type', 'storage_location', 'received_by'
+    },
+    'invoices': {
+        'invoice_number', 'po_number', 'vendor_id', 'vendor_name',
+        'invoice_date', 'posting_date', 'due_date', 'currency',
+        'payment_terms', 'invoice_status', 'posted_by'
+    },
+    'invoice_items': {
+        'invoice_number', 'invoice_line_item', 'po_number', 'po_line_item',
+        'material_code', 'material_description', 'invoice_qty', 'unit_price',
+        'currency', 'invoice_amount', 'tax_amount', 'total_amount', 'gr_reference'
     }
 }
 
