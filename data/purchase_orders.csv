@@ -1,0 +1,11 @@
+po_number,po_line_item,vendor_id,vendor_name,material_description,order_qty,unit_price,currency,po_value,order_date,plant
+4500123,10,V-2041,Anand Steel Traders,HR Coil 2mm,100,2500,INR,250000,2026-07-01,Plant-Guntur
+4500124,10,V-2052,Bharat Forgings Ltd,MS Round Bar 25mm,200,850,INR,170000,2026-07-05,Plant-Chennai
+4500125,10,V-2063,Coastal Metals,Stainless Sheet 304,50,3200,INR,160000,2026-07-08,Plant-Mumbai
+4500126,10,V-2041,Anand Steel Traders,CR Coil 1.5mm,150,2200,INR,330000,2026-07-10,Plant-Guntur
+4500127,10,V-2074,Delhi Steel Works,TMT Bar 16mm,300,520,INR,156000,2026-07-12,Plant-Delhi
+4500128,10,V-2085,Eastern Alloys,Copper Wire 4mm,80,4500,INR,360000,2026-07-15,Plant-Kolkata
+4500129,10,V-2052,Bharat Forgings Ltd,Hex Bolt M12,500,45,INR,22500,2026-07-18,Plant-Chennai
+4500130,10,V-2096,Gujarat Metal Corp,Aluminum Sheet 3mm,120,1800,INR,216000,2026-07-20,Plant-Ahmedabad
+4500131,10,V-2041,Anand Steel Traders,GI Pipe 2 inch,90,680,INR,61200,2026-07-22,Plant-Guntur
+4500132,10,V-2107,Hyderabad Steels,MS Angle 50x50,175,420,INR,73500,2026-07-25,Plant-Hyderabad
