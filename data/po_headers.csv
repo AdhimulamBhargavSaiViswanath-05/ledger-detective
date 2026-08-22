@@ -1,0 +1,121 @@
+po_number,vendor_id,vendor_name,po_date,plant,currency,payment_terms,po_status,created_by
+4500001,V-2151,Karnataka Forgings,2026-01-29,Plant-Chennai,EUR,Net60,Closed,USER008
+4500002,V-2063,Coastal Metals,2026-07-08,Plant-Chennai,EUR,AdvancePayment,Open,USER019
+4500003,V-2107,Gujarat Industries,2026-01-09,Plant-Chennai,INR,Net45,Closed,USER017
+4500004,V-2140,Jaipur Manufacturing,2026-01-07,Plant-Hyderabad,INR,AdvancePayment,Fully Received,USER008
+4500005,V-2118,Hyderabad Metals,2026-05-31,Plant-Bangalore,INR,Net45,Fully Received,USER011
+4500006,V-2085,Eastern Suppliers,2026-02-09,Plant-Mumbai,USD,Net30,Open,USER013
+4500007,V-2052,Bharat Forgings Ltd,2026-04-02,Plant-Kolkata,USD,AdvancePayment,Partially Received,USER002
+4500008,V-2162,Ludhiana Steel Mills,2026-04-28,Plant-Hyderabad,INR,Immediate,Open,USER018
+4500009,V-2085,Eastern Suppliers,2026-06-10,Plant-Hyderabad,USD,AdvancePayment,Closed,USER003
+4500010,V-2041,Anand Steel Traders,2026-06-19,Plant-Mumbai,USD,Net30,Closed,USER004
+4500011,V-2107,Gujarat Industries,2026-03-13,Plant-Pune,EUR,Net60,Closed,USER012
+4500012,V-2096,Ferro Alloys India,2026-02-23,Plant-Guntur,USD,Net30,Closed,USER018
+4500013,V-2162,Ludhiana Steel Mills,2026-03-04,Plant-Mumbai,USD,Immediate,Partially Received,USER018
+4500014,V-2074,Delhi Steel Works,2026-06-25,Plant-Bangalore,INR,Net45,Open,USER011
+4500015,V-2107,Gujarat Industries,2026-03-10,Plant-Chennai,INR,AdvancePayment,Partially Received,USER007
+4500016,V-2151,Karnataka Forgings,2026-05-08,Plant-Pune,EUR,Immediate,Closed,USER009
+4500017,V-2063,Coastal Metals,2026-03-05,Plant-Guntur,EUR,AdvancePayment,Partially Received,USER019
+4500018,V-2107,Gujarat Industries,2026-05-30,Plant-Pune,USD,Net45,Closed,USER017
+4500019,V-2118,Hyderabad Metals,2026-01-24,Plant-Kolkata,INR,Net30,Closed,USER006
+4500020,V-2173,Maharashtra Metals,2026-06-24,Plant-Pune,EUR,Net30,Fully Received,USER013
+4500021,V-2140,Jaipur Manufacturing,2026-04-30,Plant-Hyderabad,USD,AdvancePayment,Open,USER004
+4500022,V-2151,Karnataka Forgings,2026-05-18,Plant-Kolkata,USD,Net60,Open,USER010
+4500023,V-2107,Gujarat Industries,2026-02-10,Plant-Pune,INR,Net60,Closed,USER017
+4500024,V-2195,Odisha Steel Works,2026-01-28,Plant-Kolkata,EUR,Net60,Closed,USER005
+4500025,V-2096,Ferro Alloys India,2026-07-15,Plant-Mumbai,EUR,AdvancePayment,Open,USER020
+4500026,V-2096,Ferro Alloys India,2026-05-06,Plant-Chennai,INR,Net60,Partially Received,USER008
+4500027,V-2041,Anand Steel Traders,2026-03-03,Plant-Hyderabad,INR,Net30,Fully Received,USER003
+4500028,V-2173,Maharashtra Metals,2026-05-17,Plant-Kolkata,INR,Net45,Fully Received,USER018
+4500029,V-2063,Coastal Metals,2026-03-09,Plant-Hyderabad,EUR,Immediate,Closed,USER018
+4500030,V-2173,Maharashtra Metals,2026-07-06,Plant-Guntur,INR,Net60,Fully Received,USER012
+4500031,V-2118,Hyderabad Metals,2026-05-13,Plant-Pune,INR,Net45,Closed,USER003
+4500032,V-2096,Ferro Alloys India,2026-01-06,Plant-Hyderabad,EUR,Net45,Closed,USER001
+4500033,V-2052,Bharat Forgings Ltd,2026-07-01,Plant-Guntur,INR,Net45,Open,USER002
+4500034,V-2184,Nagpur Industries,2026-03-26,Plant-Chennai,EUR,Net45,Partially Received,USER016
+4500035,V-2074,Delhi Steel Works,2026-05-19,Plant-Mumbai,EUR,AdvancePayment,Fully Received,USER008
+4500036,V-2173,Maharashtra Metals,2026-05-02,Plant-Kolkata,USD,Net45,Open,USER004
+4500037,V-2151,Karnataka Forgings,2026-04-21,Plant-Bangalore,USD,Immediate,Fully Received,USER002
+4500038,V-2151,Karnataka Forgings,2026-06-17,Plant-Guntur,INR,Net30,Fully Received,USER011
+4500039,V-2173,Maharashtra Metals,2026-01-28,Plant-Mumbai,INR,Net45,Fully Received,USER005
+4500040,V-2107,Gujarat Industries,2026-02-16,Plant-Bangalore,USD,Net45,Open,USER015
+4500041,V-2173,Maharashtra Metals,2026-05-21,Plant-Chennai,INR,AdvancePayment,Open,USER003
+4500042,V-2195,Odisha Steel Works,2026-07-12,Plant-Kolkata,INR,Net45,Fully Received,USER016
+4500043,V-2118,Hyderabad Metals,2026-02-24,Plant-Kolkata,USD,Net30,Closed,USER013
+4500044,V-2041,Anand Steel Traders,2026-04-10,Plant-Bangalore,USD,Net60,Fully Received,USER018
+4500045,V-2151,Karnataka Forgings,2026-07-03,Plant-Pune,INR,Net45,Partially Received,USER007
+4500046,V-2041,Anand Steel Traders,2026-05-29,Plant-Guntur,EUR,Net30,Partially Received,USER002
+4500047,V-2041,Anand Steel Traders,2026-05-30,Plant-Pune,EUR,AdvancePayment,Closed,USER002
+4500048,V-2129,Indo Steel Corp,2026-01-21,Plant-Kolkata,INR,Net30,Open,USER008
+4500049,V-2107,Gujarat Industries,2026-01-31,Plant-Hyderabad,INR,AdvancePayment,Open,USER020
+4500050,V-2052,Bharat Forgings Ltd,2026-04-18,Plant-Guntur,EUR,AdvancePayment,Partially Received,USER009
+4500051,V-2074,Delhi Steel Works,2026-06-21,Plant-Guntur,USD,Net45,Partially Received,USER013
+4500052,V-2063,Coastal Metals,2026-06-21,Plant-Guntur,USD,Immediate,Partially Received,USER003
+4500053,V-2041,Anand Steel Traders,2026-04-28,Plant-Hyderabad,EUR,Net30,Open,USER018
+4500054,V-2074,Delhi Steel Works,2026-05-10,Plant-Bangalore,INR,Net60,Open,USER008
+4500055,V-2096,Ferro Alloys India,2026-03-14,Plant-Mumbai,USD,AdvancePayment,Partially Received,USER020
+4500056,V-2173,Maharashtra Metals,2026-06-17,Plant-Hyderabad,INR,AdvancePayment,Partially Received,USER004
+4500057,V-2195,Odisha Steel Works,2026-02-04,Plant-Bangalore,INR,Net30,Closed,USER009
+4500058,V-2085,Eastern Suppliers,2026-06-04,Plant-Mumbai,EUR,Net60,Closed,USER009
+4500059,V-2129,Indo Steel Corp,2026-05-06,Plant-Bangalore,INR,Net30,Fully Received,USER009
+4500060,V-2041,Anand Steel Traders,2026-01-01,Plant-Bangalore,INR,Net60,Closed,USER015
+4500061,V-2129,Indo Steel Corp,2026-06-30,Plant-Pune,EUR,Net30,Open,USER003
+4500062,V-2195,Odisha Steel Works,2026-06-26,Plant-Mumbai,EUR,Net30,Partially Received,USER019
+4500063,V-2129,Indo Steel Corp,2026-02-07,Plant-Pune,INR,Net30,Partially Received,USER012
+4500064,V-2195,Odisha Steel Works,2026-07-23,Plant-Kolkata,INR,Net60,Closed,USER008
+4500065,V-2151,Karnataka Forgings,2026-01-27,Plant-Bangalore,EUR,Immediate,Closed,USER008
+4500066,V-2184,Nagpur Industries,2026-02-11,Plant-Kolkata,INR,Immediate,Open,USER006
+4500067,V-2162,Ludhiana Steel Mills,2026-03-27,Plant-Kolkata,USD,Net45,Partially Received,USER006
+4500068,V-2173,Maharashtra Metals,2026-06-29,Plant-Chennai,USD,Net30,Fully Received,USER008
+4500069,V-2074,Delhi Steel Works,2026-07-29,Plant-Pune,USD,Net60,Closed,USER008
+4500070,V-2041,Anand Steel Traders,2026-06-18,Plant-Mumbai,USD,Net60,Partially Received,USER003
+4500071,V-2173,Maharashtra Metals,2026-03-13,Plant-Bangalore,EUR,AdvancePayment,Fully Received,USER018
+4500072,V-2096,Ferro Alloys India,2026-01-08,Plant-Chennai,USD,Net45,Partially Received,USER002
+4500073,V-2052,Bharat Forgings Ltd,2026-06-02,Plant-Pune,USD,Net60,Fully Received,USER020
+4500074,V-2129,Indo Steel Corp,2026-01-30,Plant-Pune,EUR,Net45,Partially Received,USER002
+4500075,V-2162,Ludhiana Steel Mills,2026-04-22,Plant-Chennai,EUR,AdvancePayment,Closed,USER012
+4500076,V-2107,Gujarat Industries,2026-01-18,Plant-Guntur,USD,AdvancePayment,Partially Received,USER004
+4500077,V-2162,Ludhiana Steel Mills,2026-03-18,Plant-Hyderabad,USD,Immediate,Partially Received,USER013
+4500078,V-2162,Ludhiana Steel Mills,2026-03-17,Plant-Hyderabad,INR,Net45,Fully Received,USER013
+4500079,V-2151,Karnataka Forgings,2026-07-11,Plant-Mumbai,EUR,AdvancePayment,Partially Received,USER013
+4500080,V-2129,Indo Steel Corp,2026-01-01,Plant-Bangalore,USD,Net45,Fully Received,USER019
+4500081,V-2140,Jaipur Manufacturing,2026-06-17,Plant-Bangalore,USD,Immediate,Fully Received,USER007
+4500082,V-2129,Indo Steel Corp,2026-05-02,Plant-Kolkata,EUR,Net45,Open,USER010
+4500083,V-2129,Indo Steel Corp,2026-06-19,Plant-Guntur,EUR,Net60,Open,USER008
+4500084,V-2151,Karnataka Forgings,2026-03-21,Plant-Mumbai,INR,Net45,Open,USER002
+4500085,V-2074,Delhi Steel Works,2026-05-02,Plant-Hyderabad,INR,Immediate,Fully Received,USER019
+4500086,V-2074,Delhi Steel Works,2026-07-03,Plant-Guntur,USD,Immediate,Fully Received,USER008
+4500087,V-2063,Coastal Metals,2026-06-17,Plant-Guntur,INR,Net30,Fully Received,USER008
+4500088,V-2063,Coastal Metals,2026-07-25,Plant-Guntur,EUR,Immediate,Open,USER018
+4500089,V-2074,Delhi Steel Works,2026-02-01,Plant-Pune,INR,Immediate,Partially Received,USER015
+4500090,V-2140,Jaipur Manufacturing,2026-07-28,Plant-Guntur,EUR,Immediate,Fully Received,USER006
+4500091,V-2162,Ludhiana Steel Mills,2026-05-02,Plant-Pune,USD,Net45,Partially Received,USER017
+4500092,V-2118,Hyderabad Metals,2026-06-10,Plant-Mumbai,USD,Immediate,Open,USER010
+4500093,V-2074,Delhi Steel Works,2026-03-11,Plant-Bangalore,USD,AdvancePayment,Open,USER005
+4500094,V-2063,Coastal Metals,2026-03-01,Plant-Pune,EUR,Net45,Closed,USER003
+4500095,V-2107,Gujarat Industries,2026-04-15,Plant-Bangalore,EUR,Immediate,Fully Received,USER002
+4500096,V-2074,Delhi Steel Works,2026-04-18,Plant-Pune,EUR,Net30,Fully Received,USER016
+4500097,V-2041,Anand Steel Traders,2026-04-01,Plant-Bangalore,USD,Immediate,Closed,USER016
+4500098,V-2074,Delhi Steel Works,2026-03-11,Plant-Pune,USD,Net30,Fully Received,USER011
+4500099,V-2151,Karnataka Forgings,2026-06-23,Plant-Kolkata,USD,Net45,Fully Received,USER005
+4500100,V-2140,Jaipur Manufacturing,2026-05-17,Plant-Chennai,USD,AdvancePayment,Open,USER003
+4500101,V-2151,Karnataka Forgings,2026-04-20,Plant-Mumbai,USD,Net45,Open,USER009
+4500102,V-2107,Gujarat Industries,2026-03-25,Plant-Mumbai,USD,Net60,Partially Received,USER013
+4500103,V-2085,Eastern Suppliers,2026-07-12,Plant-Kolkata,USD,Net60,Open,USER016
+4500104,V-2041,Anand Steel Traders,2026-07-11,Plant-Hyderabad,INR,Net60,Closed,USER003
+4500105,V-2173,Maharashtra Metals,2026-06-16,Plant-Chennai,INR,Net45,Closed,USER001
+4500106,V-2140,Jaipur Manufacturing,2026-02-09,Plant-Mumbai,INR,Immediate,Open,USER019
+4500107,V-2074,Delhi Steel Works,2026-04-30,Plant-Guntur,USD,Net60,Closed,USER020
+4500108,V-2140,Jaipur Manufacturing,2026-07-11,Plant-Guntur,INR,Net45,Partially Received,USER004
+4500109,V-2140,Jaipur Manufacturing,2026-01-07,Plant-Bangalore,EUR,Immediate,Fully Received,USER007
+4500110,V-2052,Bharat Forgings Ltd,2026-06-01,Plant-Guntur,EUR,Net45,Open,USER010
+4500111,V-2184,Nagpur Industries,2026-06-25,Plant-Hyderabad,INR,AdvancePayment,Open,USER012
+4500112,V-2129,Indo Steel Corp,2026-04-20,Plant-Guntur,USD,Net30,Partially Received,USER001
+4500113,V-2184,Nagpur Industries,2026-04-18,Plant-Kolkata,USD,Net30,Fully Received,USER012
+4500114,V-2151,Karnataka Forgings,2026-04-28,Plant-Guntur,INR,Immediate,Closed,USER017
+4500115,V-2151,Karnataka Forgings,2026-03-11,Plant-Hyderabad,EUR,Immediate,Fully Received,USER014
+4500116,V-2184,Nagpur Industries,2026-07-07,Plant-Hyderabad,USD,Net60,Closed,USER003
+4500117,V-2085,Eastern Suppliers,2026-04-26,Plant-Mumbai,USD,AdvancePayment,Fully Received,USER011
+4500118,V-2041,Anand Steel Traders,2026-05-07,Plant-Kolkata,USD,Net45,Fully Received,USER007
+4500119,V-2096,Ferro Alloys India,2026-07-24,Plant-Bangalore,USD,Net60,Partially Received,USER018
+4500120,V-2041,Anand Steel Traders,2026-05-13,Plant-Mumbai,INR,Net45,Fully Received,USER016

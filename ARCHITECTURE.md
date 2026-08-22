@@ -33,7 +33,7 @@
 
 ### High-Level Architecture
 
-\`\`\`mermaid
+```mermaid
 graph TB
     User[User] -->|Question| UI[Streamlit UI]
     UI --> Pipeline[Pipeline Orchestrator]
@@ -62,11 +62,11 @@ graph TB
     style Pipeline fill:#e1f5ff
     style Validation fill:#ffe1e1
     style Execution fill:#e1ffe1
-\`\`\`
+```
 
 ### Component Architecture
 
-\`\`\`mermaid
+```mermaid
 graph LR
     subgraph "Input Layer"
         UI[Streamlit UI]
@@ -113,7 +113,7 @@ graph LR
     
     style Validation fill:#ff6b6b
     style Execution fill:#51cf66
-\`\`\`
+```
 
 ---
 
@@ -121,7 +121,7 @@ graph LR
 
 ### Detailed Pipeline Flow
 
-\`\`\`mermaid
+```mermaid
 sequenceDiagram
     participant User
     participant UI as Streamlit UI
@@ -179,11 +179,11 @@ sequenceDiagram
             end
         end
     end
-\`\`\`
+```
 
 ### SQL Generation Flow
 
-\`\`\`mermaid
+```mermaid
 graph TD
     Question[User Question] --> LLM{LLM Type?}
     
@@ -207,11 +207,11 @@ graph TD
     style Mock fill:#ffe066
     style OpenAI fill:#51cf66
     style Gemini fill:#51cf66
-\`\`\`
+```
 
 ### Validation Flow
 
-\`\`\`mermaid
+```mermaid
 graph TD
     SQL[SQL Query] --> Empty{Empty?}
     Empty -->|Yes| Reject1[❌ Reject: Empty query]
@@ -239,7 +239,7 @@ graph TD
     style Reject4 fill:#ff6b6b
     style Reject5 fill:#ff6b6b
     style Reject6 fill:#ff6b6b
-\`\`\`
+```
 
 ---
 
@@ -249,7 +249,7 @@ graph TD
 
 **File**: `src/chains/refusal.py`
 
-\`\`\`mermaid
+```mermaid
 graph LR
     Question --> Keywords{Contains<br/>in-scope keywords?}
     Keywords -->|Yes: purchase,<br/>order, receipt,<br/>vendor, etc.| Accept[Accept Question]
@@ -257,7 +257,7 @@ graph LR
     
     style Refuse fill:#ff6b6b
     style Accept fill:#51cf66
-\`\`\`
+```
 
 **Purpose**: Identify and politely decline out-of-scope questions  
 **Keywords Checked**: purchase, order, receipt, invoice, vendor, material, quantity, value, amount, price, pending  
@@ -267,7 +267,7 @@ graph LR
 
 **File**: `src/chains/ambiguity_check.py`
 
-\`\`\`mermaid
+```mermaid
 graph TD
     Question --> Terms{Contains<br/>ambiguous terms?}
     Terms -->|pending| Qualified1{Qualified?<br/>pending receipt/payment}
@@ -289,7 +289,7 @@ graph TD
     Qualified5 -->|No| Clarify5[Ask: all of what?]
     
     style Clear fill:#51cf66
-\`\`\`
+```
 
 **Purpose**: Detect underspecified questions requiring clarification  
 **Ambiguous Terms**: pending, outstanding, status, total, all
@@ -299,7 +299,7 @@ graph TD
 **File**: `src/chains/sql_generation.py`
 
 **LLM Selection Logic**:
-\`\`\`mermaid
+```mermaid
 graph TD
     Start[Start] --> MockEnv{USE_MOCK_LLM<br/>env var?}
     MockEnv -->|true| UseMock[Use Mock LLM]
@@ -326,7 +326,7 @@ graph TD
     style UseOpenAI fill:#51cf66
     style UseGemini fill:#51cf66
     style FallbackMock fill:#ffe066
-\`\`\`
+```
 
 **Mock LLM Pattern Matching**:
 - Exact phrase matching for predefined questions
@@ -339,7 +339,7 @@ graph TD
 
 **Security Layers**:
 
-\`\`\`mermaid
+```mermaid
 graph TB
     subgraph "Layer 1: Syntax Checks"
         L1A[Empty Query]
@@ -391,7 +391,7 @@ graph TB
     L3B -->|Pass All| Safe
     
     style Safe fill:#51cf66
-\`\`\`
+```
 
 **Whitelisted Tables**:
 - `purchase_orders`: PO master data
@@ -405,7 +405,7 @@ graph TB
 
 **File**: `src/chains/execution.py`
 
-\`\`\`mermaid
+```mermaid
 graph LR
     SQL[Validated SQL] --> Execute{Execute via<br/>LangChain SQLDatabase}
     Execute -->|Success| Results[Query Results]
@@ -416,13 +416,13 @@ graph LR
     
     style Results fill:#51cf66
     style Error fill:#ff6b6b
-\`\`\`
+```
 
 ### 6. Answer Composition Component
 
 **File**: `src/chains/answer_composition.py`
 
-\`\`\`mermaid
+```mermaid
 graph TD
     Input[Question + Raw Results] --> LLMSelect{LLM Type?}
     
@@ -442,7 +442,7 @@ graph TD
     
     style MockComp fill:#ffe066
     style RealComp fill:#51cf66
-\`\`\`
+```
 
 **Mock Composition Rules**:
 1. Extract result numbers using regex: `[(number,)]`
@@ -460,7 +460,7 @@ graph TD
 
 ### Entity-Relationship Diagram
 
-\`\`\`mermaid
+```mermaid
 erDiagram
     PURCHASE_ORDERS ||--o{ RECEIPTS : "has"
     
@@ -489,12 +489,12 @@ erDiagram
         date invoice_date
         string invoice_status
     }
-\`\`\`
+```
 
 ### Data Scenarios
 
 **Mock Data Coverage**:
-\`\`\`mermaid
+```mermaid
 graph TD
     subgraph "10 Purchase Orders"
         PO1[PO 4500123:<br/>Partial Receipt<br/>80/100 received]
@@ -518,7 +518,7 @@ graph TD
     style PO2 fill:#51cf66
     style PO3 fill:#ff6b6b
     style PO4 fill:#ffa94d
-\`\`\`
+```
 
 ---
 
@@ -526,7 +526,7 @@ graph TD
 
 ### Multi-Layer Defense
 
-\`\`\`mermaid
+```mermaid
 graph TD
     subgraph "Defense in Depth"
         Layer1[Layer 1: Input Validation<br/>Refusal + Ambiguity Check]
@@ -548,7 +548,7 @@ graph TD
     
     style Layer3 fill:#ff6b6b
     style Safe fill:#51cf66
-\`\`\`
+```
 
 ### SQL Injection Prevention
 
@@ -580,7 +580,7 @@ graph TD
 
 ### Scenario 1: Successful Query
 
-\`\`\`mermaid
+```mermaid
 sequenceDiagram
     participant User
     participant System
@@ -595,11 +595,11 @@ sequenceDiagram
     DB-->>System: [(10,)]
     Note over System: 5. Composition: "There are 10 records..."
     System-->>User: "There are 10 records in the database."
-\`\`\`
+```
 
 ### Scenario 2: Ambiguous Question
 
-\`\`\`mermaid
+```mermaid
 sequenceDiagram
     participant User
     participant System
@@ -608,11 +608,11 @@ sequenceDiagram
     Note over System: 1. Refusal: PASS (contains 'pending')
     Note over System: 2. Ambiguity: FAIL<br/>"pending" without qualifier
     System-->>User: "Your question needs clarification:<br/>Do you mean pending receipt or pending payment?"
-\`\`\`
+```
 
 ### Scenario 3: SQL Injection Attempt
 
-\`\`\`mermaid
+```mermaid
 sequenceDiagram
     participant Attacker
     participant System
@@ -623,11 +623,11 @@ sequenceDiagram
     Note over System: 3. SQL Gen: Generates SQL
     Note over System: 4. Validation: FAIL<br/>Contains "DELETE" keyword
     System-->>Attacker: "Generated query failed safety checks:<br/>Dangerous keyword detected: DELETE"
-\`\`\`
+```
 
 ### Scenario 4: Out-of-Scope Question
 
-\`\`\`mermaid
+```mermaid
 sequenceDiagram
     participant User
     participant System
@@ -635,11 +635,11 @@ sequenceDiagram
     User->>System: "What's the weather today?"
     Note over System: 1. Refusal: FAIL<br/>No in-scope keywords
     System-->>User: "I can only answer questions about<br/>purchase orders and receipts..."
-\`\`\`
+```
 
 ### Scenario 5: Specific PO Lookup
 
-\`\`\`mermaid
+```mermaid
 sequenceDiagram
     participant User
     participant System
@@ -650,7 +650,7 @@ sequenceDiagram
     System->>DB: SELECT po_value<br/>FROM purchase_orders<br/>WHERE po_number = 4500123
     DB-->>System: [(250000,)]
     System-->>User: "PO 4500123 has a value of 250000 INR."
-\`\`\`
+```
 
 ---
 
@@ -658,7 +658,7 @@ sequenceDiagram
 
 ### Test Pyramid
 
-\`\`\`mermaid
+```mermaid
 graph TD
     subgraph "94 Unit Tests"
         E2E[6 End-to-End Pipeline Tests<br/>tests/test_pipeline.py]
@@ -672,7 +672,7 @@ graph TD
     style E2E fill:#ff6b6b
     style Integration fill:#ffa94d
     style Unit fill:#51cf66
-\`\`\`
+```
 
 ### Test Coverage by Component
 
@@ -692,7 +692,7 @@ graph TD
 
 ### Evaluation Harness
 
-\`\`\`mermaid
+```mermaid
 graph LR
     Questions[10 Test Questions] --> Pipeline
     Pipeline --> Evaluate{Evaluate<br/>Answers}
@@ -704,7 +704,7 @@ graph LR
     
     style Pass fill:#51cf66
     style Fail fill:#ff6b6b
-\`\`\`
+```
 
 **Current Results**:
 - Mock LLM: 50% (5/10 passed)
@@ -716,7 +716,7 @@ graph LR
 
 ### Local Development
 
-\`\`\`mermaid
+```mermaid
 graph TD
     Start[Start] --> Install[pip install -r requirements.txt]
     Install --> InitDB[python3 -c "from src.db import init_database; init_database()"]
@@ -724,11 +724,11 @@ graph TD
     RunApp --> Browser[Open http://localhost:8501]
     
     style Browser fill:#51cf66
-\`\`\`
+```
 
 ### Production Deployment
 
-\`\`\`mermaid
+```mermaid
 graph TD
     Start[Start] --> GetKey[Get OpenAI/Gemini API Key]
     GetKey --> AddEnv[Add to .env:<br/>OPENAI_API_KEY=sk-...]
@@ -740,7 +740,7 @@ graph TD
     Deploy --> Live[Production Live]
     
     style Live fill:#51cf66
-\`\`\`
+```
 
 ### Environment Variables
 
@@ -752,7 +752,7 @@ graph TD
 
 ### Git Branch Strategy
 
-\`\`\`mermaid
+```mermaid
 gitGraph
     commit id: "Initial"
     branch dev
@@ -786,7 +786,7 @@ gitGraph
     
     checkout main
     merge dev tag: "v1.0.0"
-\`\`\`
+```
 
 **Strategy**:
 1. Feature branches for each phase: `feature/phase-X-name`

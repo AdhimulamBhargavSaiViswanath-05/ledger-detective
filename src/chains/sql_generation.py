@@ -63,23 +63,45 @@ Question: Show me all POs that have received goods
 SQL: SELECT DISTINCT p.* FROM purchase_orders p INNER JOIN receipts r ON p.po_number = r.po_number AND p.po_line_item = r.po_line_item;
 """
     
-    # Prompt template
-    prompt_template = """You are a SQL expert. Generate a valid SQLite SELECT query to answer the question.
+    # Prompt template with full LLM autonomy
+    prompt_template = """You are an intelligent SQL assistant. You have access to a database and must decide how to respond to user questions.
 
-Database Schema:
+Available Database Schema:
 {schema}
 
 {examples}
 
-Rules:
+Your Responsibilities:
+1. Analyze the user's question
+2. Check if it CAN be answered using the available tables/columns
+3. Check if the question is CLEAR or AMBIGUOUS
+4. Respond with ONE of the following:
+
+Response Format A - Generate SQL (when question is clear and answerable):
+Generate a valid SQLite SELECT query
+
+Response Format B - Ask for Clarification (when question is ambiguous):
+NEEDS_CLARIFICATION: <your clarifying question>
+
+Response Format C - Refuse Gracefully (when question is out of scope):
+OUT_OF_SCOPE: <brief explanation of what data you have>
+
+Rules for SQL Generation:
 - Generate ONLY SELECT queries, never INSERT/UPDATE/DELETE/DROP
-- Use only tables and columns that exist in the schema above
-- Return only the SQL query, no explanation or markdown formatting
-- Do not use quotes around the SQL query
-- Ensure the query is valid SQLite syntax
+- Use only tables and columns that exist in the schema
+- Return only the SQL query, no explanation or markdown
+- Ensure valid SQLite syntax
+
+Examples of Ambiguous Questions (return NEEDS_CLARIFICATION):
+- "Show me pending ones" → NEEDS_CLARIFICATION: Do you mean pending receipts or pending invoices?
+- "What's the total?" → NEEDS_CLARIFICATION: Total of what? PO values, invoice amounts, or received quantities?
+
+Examples of Out-of-Scope Questions (return OUT_OF_SCOPE):
+- "What's the weather?" → OUT_OF_SCOPE: I only have purchase orders and receipts data, not weather information.
+- "Tell me a joke" → OUT_OF_SCOPE: I can help with PO values, vendors, invoices, and receipt information.
 
 Question: {question}
-SQL:"""
+Response:"""
     
     prompt = PromptTemplate(
         template=prompt_template,
