@@ -26,10 +26,14 @@ def should_refuse(question: str) -> bool:
     
     # Keywords that indicate in-scope questions
     in_scope_keywords = [
-        'po', 'purchase', 'order', 'receipt', 'invoice', 'vendor',
-        'material', 'quantity', 'value', 'amount', 'price', 'total',
-        '4500'  # PO numbers start with 4500
+        'purchase', 'order', 'receipt', 'invoice', 'vendor',
+        'material', 'quantity', 'value', 'amount', 'price',
+        '4500',  # PO numbers start with 4500
+        'pending'  # Let ambiguity check handle this
     ]
+    
+    # Note: Don't include 'po', 'total', 'pending' here as they can appear in ambiguous questions
+    # Let ambiguity check handle those
     
     # If any in-scope keyword present, don't refuse
     if any(keyword in question_lower for keyword in in_scope_keywords):

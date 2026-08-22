@@ -104,16 +104,19 @@ def mock_answer_composition(input_text: str) -> str:
         numbers = re.findall(r'\d+', input_text)
         main_number = numbers[-1] if numbers else "0"
     
-    # Simple template responses
-    if "count" in input_text.lower():
-        return f"There are {main_number} records in the database."
-    elif "po 4500123" in input_text.lower() or "4500123" in input_text:
+    # Get the original question from input
+    question_lower = input_text.lower()
+    
+    # Template responses based on question type
+    if "4500123" in question_lower:
         return f"PO 4500123 has a value of {main_number} INR."
-    elif "po 4500124" in input_text.lower() or "4500124" in input_text:
+    elif "4500124" in question_lower:
         return f"PO 4500124 has a value of {main_number} INR."
-    elif "total" in input_text.lower() and "invoice" in input_text.lower():
+    elif "count" in question_lower or "how many" in question_lower:
+        return f"There are {main_number} records in the database."
+    elif "total" in question_lower and "invoice" in question_lower:
         return f"The total invoice amount is {main_number} INR."
-    elif "vendor" in input_text.lower():
+    elif "vendor" in question_lower:
         return f"There are {main_number} vendors."
     else:
         return f"The result is {main_number}."
