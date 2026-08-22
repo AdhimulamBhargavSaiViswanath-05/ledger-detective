@@ -5,11 +5,7 @@ import os
 from src.chains.sql_generation import generate_sql
 
 
-# Skip all tests if no API key
-pytestmark = pytest.mark.skipif(
-    not os.getenv("GEMINI_API_KEY"),
-    reason="GEMINI_API_KEY not set"
-)
+# Tests will run with either real LLM (if API key present) or mock LLM (fallback)
 
 
 WHITELISTED_TABLES = ['purchase_orders', 'receipts']

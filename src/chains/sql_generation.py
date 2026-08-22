@@ -3,8 +3,22 @@ import os
 from dotenv import load_dotenv
 from langchain_core.prompts import PromptTemplate
 from langchain_core.output_parsers import StrOutputParser
-from langchain_google_genai import ChatGoogleGenerativeAI
 from src.db import get_database
+
+# Import both real and mock LLM
+try:
+    from langchain_google_genai import ChatGoogleGenerativeAI
+    GEMINI_AVAILABLE = True
+except ImportError:
+    GEMINI_AVAILABLE = False
+
+try:
+    from langchain_openai import ChatOpenAI
+    OPENAI_AVAILABLE = True
+except ImportError:
+    OPENAI_AVAILABLE = False
+
+from src.chains.mock_llm import MockSQLGenerationLLM
 
 
 # Load environment variables
@@ -73,12 +87,42 @@ SQL:"""
         partial_variables={"schema": schema_info, "examples": few_shot_examples}
     )
     
-    # LLM - Google Gemini
-    llm = ChatGoogleGenerativeAI(
-        model="gemini-2.0-flash-lite",
-        temperature=0,
-        google_api_key=os.getenv("GEMINI_API_KEY")
-    )
+    # LLM Selection - Auto-detect which LLM to use with fallback to mock
+    # Priority: OpenAI > Gemini > Mock
+    
+    use_mock = os.getenv("USE_MOCK_LLM", "false").lower() == "true"
+    llm = None
+    
+    if use_mock:
+        # Explicitly use mock LLM (for testing)
+        llm = MockSQLGenerationLLM()
+    elif os.getenv("OPENAI_API_KEY") and OPENAI_AVAILABLE:
+        # Try to use OpenAI if API key is available
+        try:
+            llm = ChatOpenAI(
+                model="gpt-4o-mini",
+                temperature=0,
+                api_key=os.getenv("OPENAI_API_KEY")
+            )
+        except Exception as e:
+            print(f"WARNING: Failed to initialize OpenAI: {e}. Falling back to mock.")
+            llm = None
+    elif os.getenv("GEMINI_API_KEY") and GEMINI_AVAILABLE:
+        # Try to use Gemini if API key is available
+        try:
+            llm = ChatGoogleGenerativeAI(
+                model="models/gemini-1.5-flash-latest",
+                temperature=0,
+                google_api_key=os.getenv("GEMINI_API_KEY")
+            )
+        except Exception as e:
+            print(f"WARNING: Failed to initialize Gemini: {e}. Falling back to mock.")
+            llm = None
+    
+    # Fallback to mock if no LLM was successfully initialized
+    if llm is None:
+        print("WARNING: No valid API key found or LLM initialization failed. Using MockSQLGenerationLLM for development.")
+        llm = MockSQLGenerationLLM()
     
     # Build LCEL chain
     chain = prompt | llm | StrOutputParser()
