@@ -1,0 +1,13 @@
+/* Import Theme Variables - MUST BE FIRST */
+@import './theme.css';
+
+/* Import Animations */
+@import './animations.css';
+
+/* Import Component Styles */
+@import './components.css';
+
+/* Root Element */
+#root {
+  min-height: 100vh;
+}

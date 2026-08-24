@@ -1,0 +1,47 @@
+# Python
+__pycache__/
+*.py[cod]
+*$py.class
+*.so
+.Python
+env/
+venv/
+ENV/
+.venv
+
+# IDE
+.vscode/
+.idea/
+*.swp
+*.swo
+.DS_Store
+
+# Testing
+.pytest_cache/
+.coverage
+htmlcov/
+.tox/
+
+# Frontend (not needed for backend deploy)
+frontend/
+node_modules/
+
+# Documentation
+*.md
+!README.md
+
+# Data (will be generated)
+data/*.csv
+ledger.db
+
+# Logs
+*.log
+logs/
+
+# Environment
+.env.local
+.env.development
+
+# Git
+.git/
+.gitignore

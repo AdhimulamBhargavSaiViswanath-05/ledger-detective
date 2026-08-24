@@ -1,0 +1,21 @@
+# Render.com Blueprint for Ledger Detective
+# This file enables one-click deployment to Render.com
+
+services:
+  # Backend FastAPI Service
+  - type: web
+    name: ledger-detective-backend
+    env: python
+    region: oregon
+    plan: free
+    buildCommand: "pip install -r backend/requirements.txt"
+    startCommand: "cd backend && uvicorn main:app --host 0.0.0.0 --port $PORT"
+    envVars:
+      - key: GEMINI_API_KEY
+        sync: false # User must add this manually in Render dashboard
+      - key: USE_MOCK_LLM
+        value: false
+      - key: PYTHON_VERSION
+        value: 3.11.0
+    healthCheckPath: /api/health
+    autoDeploy: true
