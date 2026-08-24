@@ -33,4 +33,3 @@ jobs:
         with:
           github_token: ${{ secrets.GITHUB_TOKEN }}
           publish_dir: ./frontend/dist
-          cname: your-custom-domain.com  # Optional: remove if not using custom domain
