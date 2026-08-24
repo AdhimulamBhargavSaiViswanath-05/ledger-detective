@@ -5,6 +5,7 @@ import remarkGfm from 'remark-gfm'
 import { Prism as SyntaxHighlighter } from 'react-syntax-highlighter'
 import { vscDarkPlus, vs } from 'react-syntax-highlighter/dist/esm/styles/prism'
 import rehypeRaw from 'rehype-raw'
+import logoImage from '../public/ledger-detective-logo.png'
 
 interface QueryResponse {
   question: string
@@ -524,7 +525,7 @@ function App() {
             </button>
             <div style={{ display: 'flex', alignItems: 'center', gap: '0.75rem' }}>
               <img 
-                src="/ledger-detective-logo.png" 
+                src={logoImage} 
                 alt="Ledger Detective Logo" 
                 style={{ width: '36px', height: '36px' }}
               />
